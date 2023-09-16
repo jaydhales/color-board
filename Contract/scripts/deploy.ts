@@ -7,10 +7,10 @@ async function main() {
 
   console.log(`Board deployed to ${board.target}`);
 
-  const color1 = await board.getCellColor(6, 4);
-  const color2 = await board.getCellColor(1, 4);
+  const color1 = await board.getAllArray();
+  // const color2 = await board.getCellColor(1, 4);
 
-  console.log({ color1, color2 });
+  console.log({ color1 });
 }
 
 // We recommend this pattern to be able to use async/await everywhere

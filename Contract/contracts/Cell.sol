@@ -38,6 +38,10 @@ contract BoardColor {
         return _getColor(board[x][y]);
     }
 
+    function getAllArray () external view returns(uint8[7][5] memory) {
+        return board;
+    }
+
     function _getColor(uint8 _id) internal pure returns (string memory) {
         if (_id == 2) return "black";
         if (_id == 3) return "red";
