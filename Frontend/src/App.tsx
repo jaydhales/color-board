@@ -35,11 +35,7 @@ function App() {
   //   watch: true,
   // });
 
-  const {
-    data: _boardData,
-    loading: boardLoading,
-    error: boardError,
-  } = useContractRead({
+  const { data: _boardData, isLoading: boardLoading } = useContractRead({
     ...boardContract,
     functionName: "getAllArray",
   });
@@ -139,7 +135,7 @@ function App() {
                   className="grid grid-flow-col w-max gap-2 h-16"
                   key={indexOut}
                 >
-                  {data.map(({ id, color }, index) => (
+                  {data.map(({ color }, index) => (
                     <div
                       className="w-16 inset-0 rounded bg-white bg-opacity-20 border hover:cursor-pointer hover:scale-105 transition-all duration-75 active:scale-90 "
                       style={{ background: color }}
