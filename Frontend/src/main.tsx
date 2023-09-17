@@ -4,14 +4,14 @@ import App from "./App.tsx";
 import "./index.css";
 import { WagmiConfig, createConfig, configureChains } from "wagmi";
 import { sepolia } from "viem/chains";
-// import { alchemyProvider } from "wagmi/providers/alchemy";
+import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 
 const { chains, publicClient } = configureChains(
   [sepolia],
-  [publicProvider()]
+  [alchemyProvider({apiKey: import.meta.env.VITE_SEPOLIA_API}), publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
