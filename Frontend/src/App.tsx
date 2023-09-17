@@ -12,6 +12,7 @@ function App() {
   const [output, setOutput] = useState({
     x: "",
     y: "",
+    id: 0,
     color: "",
   });
   const [board, setBoard] = useState<{ id: number; color: string }[][]>();
@@ -70,7 +71,7 @@ function App() {
     setOutput({
       x,
       y,
-      color: _board[_x][_y].color,
+      ..._board[_x][_y],
     });
 
     setBoard(_board);
@@ -124,6 +125,12 @@ function App() {
             >
               Find
             </button>
+          </div>
+          <div className="flex gap-6 justify-center">
+            <p>X coordinates: {output.x}</p>
+            <p>Y coordinates: {output.y}</p>
+            <p>Color ID: {output.id > 0 && output.id}</p>
+            <p>Color: {output.color}</p>
           </div>
           <div className="grid gap-2 w-max mx-auto">
             {!boardLoading &&
