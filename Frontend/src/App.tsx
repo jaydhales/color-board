@@ -1,7 +1,7 @@
 import "./App.css";
 import { useAccount, useContractRead } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import colorAbi from "../../Contract/artifacts/contracts/Cell.sol/BoardColor.json";
+import colorAbi from "./contract-int/abi.json";
 import { useEffect, useState } from "react";
 import glowImg from "./assets/glow.avif";
 import glareImg from "./assets/glare.avif";
